@@ -7,7 +7,9 @@ logging.basicConfig(level=logging.INFO)
 app = Flask(__name__)
 app.config.from_object('config')
 
-app.logger.info('App started')
+# Ensure that Flask's logger is also set to INFO level
+app.logger.setLevel(logging.INFO)
 
+app.logger.info('App started')
 
 from app import routes

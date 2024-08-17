@@ -9,8 +9,11 @@ def index():
 @app.route('/chat', methods=['POST'])
 def chat():
     user_message = request.json['message']
-    language = request.json['language']
-    
+    try:
+        language = request.json['language']
+    except:
+        language = 'en'
+        
     # log the user request
     app.logger.info(f'User ({language}) asked: {user_message}')
     
