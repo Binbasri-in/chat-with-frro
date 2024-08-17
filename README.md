@@ -2,6 +2,11 @@
 A simple chatbot for chatting with FRRO documents for Foreigners in India, I scraped the documents from Foreigners division website and created a RAG
 
 
+## TODO
+
+- Choose the correct Vector Database for the chatbot
+- Integrate the chatbot with the web app
+
 ### partition the pdf files using Unstructured library
 
 I have checked the pdf files and they are not very consistant, so I will use the pdf partition function with auto mode so if the text is not extractable then OCR will be performed, so you need to install Full Unstrcutured installation from [here](https://docs.unstructured.io/open-source/installation/full-installation)
