@@ -1,0 +1,132 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: white;
+}
+
+.navbar-dark .navbar-brand {
+    font-weight: bold;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    height: 75vh; /* Set to 70% of the viewport height */
+    min-height: 400px; /* Optional: Set a minimum height for smaller screens */
+}
+
+.chat-header {
+    padding: 15px;
+    background-color: #1f1f1f;
+    border-bottom: 1px solid #333;
+    text-align: center;
+}
+
+.chat-title {
+    margin: 0;
+    font-size: 18px;
+}
+
+.chat-status {
+    margin: 0;
+    font-size: 12px;
+    color: #bbb;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #181818;
+}
+
+.message {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.message.user-message {
+    justify-content: flex-end;
+}
+
+.message.bot-message {
+    justify-content: flex-start;
+}
+
+.message-avatar {
+    font-size: 1.5rem;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+
+.message-text {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #333;
+    font-size: 14px;
+}
+
+.message.user-message .message-text {
+    background-color: #4CAF50; 
+    border-radius: 20px 0 20px 20px; 
+}
+
+.message.user-message .message-avatar {
+    order: 2;
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.message.bot-message .message-text {
+    background-color: #333; 
+    border-radius: 0 20px 20px 20px; 
+}
+
+.message-timestamp {
+    font-size: 10px;
+    color: #888;
+    margin-top: 5px;
+    align-self: flex-end;
+}
+
+.chat-input {
+    display: flex;
+    padding: 15px;
+    background-color: #1f1f1f;
+    border-top: 1px solid #333;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #333;
+    color: white;
+    resize: none; /* Prevent the user from resizing the textarea */
+    height: auto;
+    max-height: 100px; /* Limit the max height of the textarea */
+    overflow-y: auto; /* Allow scrolling if the content exceeds the max height */
+}
+
+#send-button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+}

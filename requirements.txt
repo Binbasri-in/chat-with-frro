@@ -1,0 +1,7 @@
+Flask
+Flask-SQLAlchemy
+psycopg2-binary
+sentence-transformers
+scikit-learn
+numpy
+Flask-Login
