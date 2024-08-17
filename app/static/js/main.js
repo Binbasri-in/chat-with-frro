@@ -37,6 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedLanguage = document.querySelector('input[name="language"]:checked').value;
         const selectedOption = document.querySelector('input[name="option"]:checked').value;
 
+        // if the language is not decided or option then set to default
+        if (!selectedLanguage) {
+            selectedLanguage = 'en';
+        }
+        if (!selectedOption) {
+            selectedOption = '0';
+        }
+
         if (message) {
             addMessage(message, true);
             userInput.value = '';
@@ -60,5 +68,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     sendButton.addEventListener('click', sendMessage);
+    userInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+            // Prevent the default behavior of the Enter key
+            event.preventDefault();
+
+            // Scroll to the bottom of the chat messages
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Clear the user input field
+            userInput.value = '';
+        }
+    });
     
 });
